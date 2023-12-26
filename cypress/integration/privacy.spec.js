@@ -5,7 +5,7 @@ describe('Privacy Central de Atendimento ao Cliente TAT', () => {
         cy.visit('cypress-basico-v2/src/privacy.html')
     })
 
-    it('Testa a página da política de privacidade de forma independente', () => {    
+    it.only('Testa a página da política de privacidade de forma independente', () => {    
         cy.get('#white-background > :nth-child(1)')
             .should('be.visible')
         cy.get('#white-background > :nth-child(2)')
