@@ -11,9 +11,9 @@ This is the project of the Customer Service Central system of the company Talkin
 
 ## Pre-requirements
 
-It is required to have Node.js and npm installed to run this project.
+It is required to have Git, Visual Studio Code, Node.js and npm installed to run this project.
 
-> I used versions v18.15.0 and 9.5.0 of Node.js and npm, respectively. I suggest you use the same or later versions.
+> I used versions 2.34.1, 1.85.1, v16.13.2 and 8.3.2 of Git, VS Code, Node.js and npm, respectively. I suggest you use the same or later versions.
 
 ## Instalation
 
