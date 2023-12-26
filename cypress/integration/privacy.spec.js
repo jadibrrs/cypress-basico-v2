@@ -2,7 +2,7 @@
 
 describe('Privacy Central de Atendimento ao Cliente TAT', () => {
     beforeEach(() => {
-        cy.visit('cypress-basico-v2/src/privacy.html')
+        cy.visit('./src/privacy.html')
     })
 
     it.only('Testa a página da política de privacidade de forma independente', () => {    
