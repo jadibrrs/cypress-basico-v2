@@ -11,5 +11,3 @@ jobs:
       # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v2
-        with:
-          cypress-version: 9.5.1
