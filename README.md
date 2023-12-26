@@ -13,18 +13,18 @@ This is the project of the Customer Service Central system of the company Talkin
 
 It is required to have Git, Visual Studio Code, Node.js and npm installed to run this project.
 
-> I used versions 2.34.1, 1.85.1, v16.13.2 and 8.3.2 of Git, VS Code, Node.js and npm, respectively. I suggest you use the same or later versions.
+> I used versions `2.34.1`, `1.85.1`, `v16.13.2` and `8.3.2` of Git, VS Code, Node.js and npm, respectively. I suggest you use the same or later versions.
 
 ## Instalation
 
-Run npm install (or npm i for the short version) to install the dev dependencies.
+Run `npm install` (or `npm i` for the short version) to install the dev dependencies.
 
 ## Tests
 
-> Note: Before running the tests, make a copy of the cypress.env.example.json file as cypress.env.json, which in the real world, you would update with valid credentials.
+> Note: Before running the tests, make a copy of the `cypress.env.example.json` file as `cypress.env.json`, which in the real world, you would update with valid credentials.
 
-> The cypress.env.json file is included on .gitignore and you're safe that confidential info won't be versioned.
+> The `cypress.env.json` file is included on `.gitignore` and you're safe that confidential info won't be versioned.
 
-Run npm test (or npm t for the short version) to run the test in headless mode.
+Run `npm test` (or `npm t` for the short version) to run the test in headless mode.
 
-Or, run npm run cy:open to open Cypress in interactive mode.
+Or, run `npm run cy:open` to open Cypress in interactive mode.
