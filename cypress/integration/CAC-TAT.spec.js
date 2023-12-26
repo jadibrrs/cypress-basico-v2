@@ -2,33 +2,46 @@
 
 describe('Central de Atendimento ao Cliente TAT', () => {
     beforeEach(() => {
-        cy.visit('http://127.0.0.1:5500/cypress-basico-v2/src/index.html')
+        cy.visit('cypress-basico-v2/src/index.html')
     })
 
     it('Verifica o título da aplicação', () => {
-        cy.title().should('be.equal', 'Central de Atendimento ao Cliente TAT')
+        cy.title()
+            .should('be.equal', 'Central de Atendimento ao Cliente TAT')
     })
 
     it('Preenche os campos obrigatórios e envia o formulário', () => {
         const longText = 'Teste, teste, teste, teste, teste, teste, teste, teste, teste, teste, teste, texto longo para vermos o delay'
 
-        cy.get('input[id="firstName"]').type('Jadi')
-        cy.get('input[id="lastName"]').type('Barros')
-        cy.get('input[id="email"]').type('jbheliodoro@gmail.com')
-        cy.get('textarea[id="open-text-area"]').type(longText, {delay: 0})
-        cy.get('button[type="submit"]').click()
+        cy.get('input[id="firstName"]')
+            .type('Jadi')
+        cy.get('input[id="lastName"]')
+            .type('Barros')
+        cy.get('input[id="email"]')
+            .type('jbheliodoro@gmail.com')
+        cy.get('textarea[id="open-text-area"]')
+            .type(longText, {delay: 0})
+        cy.get('button[type="submit"]')
+            .click()
 
-        cy.get('span[class="success"]').should('be.visible')
+        cy.get('span[class="success"]')
+            .should('be.visible')
     })
 
     it('Exibe mensagem de erro ao submeter o formulário com um email com formatação inválida', () => {
-        cy.get('#firstName').type('Jadi')
-        cy.get('#lastName').type('Barros')
-        cy.get('#email').type('jbheliodoro')
-        cy.get('#open-text-area').type('Teste', {delay: 0 })
-        cy.get('button[type="submit"]').click()
+        cy.get('#firstName')
+            .type('Jadi')
+        cy.get('#lastName')
+            .type('Barros')
+        cy.get('#email')
+            .type('jbheliodoro')
+        cy.get('#open-text-area')
+            .type('Teste', {delay: 0 })
+        cy.get('button[type="submit"]')
+            .click()
 
-        cy.get('.error').should('be.visible')
+        cy.get('.error')
+            .should('be.visible')
     })
 
     it('Campo telefone continua vazio quando preenchido com valor não numérico', () => {
@@ -38,14 +51,21 @@ describe('Central de Atendimento ao Cliente TAT', () => {
     })
 
     it('Exibe mensagem de erro quando o telefone se torna obrigatório mas não é preenchido antes do envio do formulário', () => {
-        cy.get('#firstName').type('Jadi')
-        cy.get('#lastName').type('Barros')
-        cy.get('#email').type('jbheliodoro@gmail.com')
-        cy.get('#phone-checkbox').check()
-        cy.get('#open-text-area').type('Teste')
-        cy.get('button[type="submit"]').click()
+        cy.get('#firstName')
+            .type('Jadi')
+        cy.get('#lastName')
+            .type('Barros')
+        cy.get('#email')
+            .type('jbheliodoro@gmail.com')
+        cy.get('#phone-checkbox')
+            .check()
+        cy.get('#open-text-area')
+            .type('Teste')
+        cy.get('button[type="submit"]')
+            .click()
 
-        cy.get('.error').should('be.visible')
+        cy.get('.error')
+            .should('be.visible')
     })
 
     it('Preenche e limpa os campos nome, sobrenome, email e telefone + Exibe mensagem de erro ao submeter o formulário sem preencher os campos obrigatórios', () => {
@@ -73,8 +93,10 @@ describe('Central de Atendimento ao Cliente TAT', () => {
             .clear()
             .should('have.value', '')
 
-        cy.get('button[type="submit"]').click()
-        cy.get('.error').should('be.visible')
+        cy.get('button[type="submit"]')
+            .click()
+        cy.get('.error')
+            .should('be.visible')
     })
 
     it('Envia o formulário com sucesso usando um comando customizado', () => {
@@ -161,5 +183,16 @@ describe('Central de Atendimento ao Cliente TAT', () => {
             .should($input => {
                 expect($input[0].files[0].name).to.equal('example.json')
             })
+    })
+
+    it('Verifica que a política de privacidade abre em outra aba sem a necessidade de um clique', () => {
+        cy.get('#privacy a')
+            .should('have.attr', 'target', '_blank')
+    })
+
+    it('Acessa a página da política de privacidade removendo o target e então clicando no link', () => {
+        cy.get('#privacy a')
+            .invoke('removeAttr', 'target')
+            .click()
     })
 })
