@@ -5,6 +5,10 @@
 It is great to have you here.
 I am sure you are going to love this project ❤️
 
+## About
+
+This is the project of the Customer Service Central system of the company Talking About Testing (CAC-TAC), provided as a practical activity to students in the Automated Testing with Cypress - Basic course, taught by Walmyr Filho.
+
 ## Pre-requirements
 
 It is required to have Node.js and npm installed to run this project.
